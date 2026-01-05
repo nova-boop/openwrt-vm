@@ -119,3 +119,27 @@ uci set luci.main.mediaurlbase='/luci-static/bootstrap'
 
 uci commit luci
 ```
+
+
+## 特别提示 [![](https://img.shields.io/badge/-个人免责声明-FFFFFF.svg)](#特别提示-)
+
+- **因精力有限不提供任何技术支持和教程等相关问题解答，不保证完全无 BUG！**
+
+- **本人不对任何人因使用本固件所遭受的任何理论或实际的损失承担责任！**
+
+- **本固件禁止用于任何商业用途，请务必严格遵守国家互联网使用相关法律规定！**
+
+- **请务必遵从 “不涉及政治，不涉及宗教，不涉及黄赌毒” 三不原则！**
+
+
+## 鸣谢 [![](https://img.shields.io/badge/-跪谢各大佬-FFFFFF.svg)](#鸣谢-)
+| [ImmortalWrt](https://github.com/immortalwrt) | [coolsnowwolf](https://github.com/coolsnowwolf) | [P3TERX](https://github.com/P3TERX) | [Flippy](https://github.com/unifreq) | [haiibo](https://github.com/haiibo) |
+| :-------------: | :-------------: | :-------------: | :-------------: | :-------------: |
+| <img width="100" src="https://avatars.githubusercontent.com/u/53193414"/> | <img width="100" src="https://avatars.githubusercontent.com/u/31687149"/> | <img width="100" src="https://avatars.githubusercontent.com/u/25927179"/> | <img width="100" src="https://avatars.githubusercontent.com/u/39355261"/> | <img width="100" src="https://avatars.githubusercontent.com/u/85640068"/> |
+| [Ophub](https://github.com/ophub) | [SuLingGG](https://github.com/SuLingGG) | [QiuSimons](https://github.com/QiuSimons) | [IvanSolis1989](https://github.com/IvanSolis1989) |
+| <img width="100" src="https://avatars.githubusercontent.com/u/68696949"/> | <img width="100" src="https://avatars.githubusercontent.com/u/22287562"/> | <img width="100" src="https://avatars.githubusercontent.com/u/45143996"/> | <img width="100" src="https://avatars.githubusercontent.com/u/44228691"/> | |
+
+
+<a href="#readme">
+<img src="https://img.shields.io/badge/-返回顶部-FFFFFF.svg" title="返回顶部" align="right"/>
+</a>
