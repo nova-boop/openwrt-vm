@@ -105,7 +105,6 @@ vim /etc/rc.local
 /etc/init.d/pushbot restart
 /etc/init.d/passxxxx restart
 /etc/init.d/passxxxx_server restart
-/etc/init.d/v2ray_server restart
 exit 0
 ```
 
