@@ -1,4 +1,4 @@
-name: OPENWRT_VM_OPKG_MAIN
+name: build-opkg-main
 
 on:
   workflow_dispatch:

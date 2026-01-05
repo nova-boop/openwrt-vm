@@ -1,4 +1,4 @@
-name: OPENWRT_VM_APK_MAIN
+name: build-apk-main
 
 on:
   workflow_dispatch:
