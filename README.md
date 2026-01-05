@@ -1,5 +1,17 @@
 # openwrt-vm docker 
 
+
+## 项目说明 [![](https://img.shields.io/badge/-项目基本介绍-FFFFFF.svg)](#项目说明-)
+- 固件来源：[![Lean](https://img.shields.io/badge/Lede-Lean-ff69b4.svg?style=flat&logo=appveyor)](https://github.com/coolsnowwolf/lede) [![P3TERX](https://img.shields.io/badge/OpenWrt-P3TERX-blueviolet.svg?style=flat&logo=appveyor)](https://github.com/P3TERX/Actions-OpenWrt) [![Flippy](https://img.shields.io/badge/Package-Flippy-orange.svg?style=flat&logo=appveyor)](https://github.com/unifreq/openwrt_packit) [![demo](https://img.shields.io/badge/Build-nova-boop-32C955.svg?style=flat&logo=appveyor)](https://github.com/nova-boop/openwrt-vm)
+- 项目使用 Github Actions 拉取 [Lean](https://github.com/coolsnowwolf/lede) 的 Openwrt 源码仓库进行云编译
+- 固件默认管理地址：`192.168.2.3` 默认用户：`root` 默认密码：`password`
+- 固件集成的所有 ipk 插件全部打包在 Packages 文件中，可以在 [Releases](https://github.com/nova-boop/openwrt-vm/releases) 内进行下载
+- 项目编译的固件插件为最新版本，最新版插件可能有 BUG，如果之前使用稳定则无需追新
+- 第一次使用请采用全新安装，避免出现升级失败以及其他一些可能的 BUG
+- 插件过多的固件会产生较多的临时文件，请保证磁盘介质空间足够
+  - VM版本    引导空间:256MB 固件空间 1024MB ，建议安装盘不少于 4GB
+ 
+
 ## **docker openwrt 旁路由配置指南 支持 公网 ipv6**
 
 <font color=red> ⛔ **(注意 由于 使用的是 docker macvlan 模式，宿主机 将无法访问 到macvlan，也就是说 宿主机 无法访问到 容器)**</font>
