@@ -1,0 +1,25 @@
+#!/bin/sh
+# Power By Qs315490
+
+system_cfg="system.@system[0]"
+config_dir="/etc/config"
+
+# --- 1. 时区设置 ---
+uci batch<<EOF
+	set ${system_cfg}.zonename='Asia/Shanghai'
+	set ${system_cfg}.timezone='CST-8'
+	commit system
+EOF
+
+# --- 3. TTYD 配置 (检查初始化脚本更准确) ---
+if [ -e /etc/init.d/ttyd ];then
+	uci batch<<EOF
+	set ttyd.@ttyd[0].command='/bin/login -f root'
+	del ttyd.@ttyd[0].interface
+	commit ttyd
+EOF
+fi
+
+# 退出前，让系统在所有 uci-defaults 配置完成后自动完成重启/重载配置。
+exit 0
+
