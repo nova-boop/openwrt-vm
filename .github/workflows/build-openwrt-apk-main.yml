@@ -46,7 +46,7 @@ jobs:
           sudo -E apt-get -y purge azure-cli ghc* zulu* llvm* firefox google* dotnet* powershell openjdk* mongodb* moby* || true
           sudo -E apt-get -y update
           sudo -E apt-get -y install $(curl -fsSL is.gd/depends_ubuntu_2204)
-          sudo -E apt-get -y install  ccache  curl git libelf-dev libfuse-dev libglib2.0-dev libgmp3-dev libltdl-dev libmpc-dev libmpfr-dev libncurses5-dev libncursesw5-dev libpython3-dev libreadline-dev libssl-dev libtool p7zip p7zip-full unzip vim wget jq libc6-dev libffi-dev libpcre3-dev libsqlite3-dev  zip gzip upx tree
+          sudo -E apt-get -y install  ccache  curl git libelf-dev libfuse-dev libglib2.0-dev libgmp3-dev libltdl-dev libmpc-dev libmpfr-dev libncurses5-dev libncursesw5-dev libpython3-dev libreadline-dev libssl-dev libtool p7zip p7zip-full unzip vim wget jq libc6-dev libffi-dev libpcre3-dev libsqlite3-dev  zip gzip upx tree qemu-utils
           
           sudo -E systemctl daemon-reload
           sudo -E apt-get -y autoremove --purge
