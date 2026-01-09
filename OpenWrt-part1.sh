@@ -112,3 +112,8 @@ rm -rf feeds/small/{luci-app-bypass,luci-app-ssr-plus}
 
 ls -lh feeds/custom/
 rm -rf feeds/custom/{luci-app-store} 
+
+ls -lh feeds/custom/
+ls -lh feeds/packages
+
+
