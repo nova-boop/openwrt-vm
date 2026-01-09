@@ -11,7 +11,7 @@ env:
   CONFIG_FILE: OPENWRT_VM_OPKG.config
   DIY_P1_SH: OpenWrt-part1.sh
   DIY_P2_SH: OpenWrt-part2.sh
-  CACHE_TOOLCHAIN: false
+  CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
   FIRMWARE_TAG: OPENWRT_VM_OPKG_MAIN
