@@ -110,10 +110,11 @@ git_sparse_clone main https://github.com/kenzok8/small-package dns2socks ipt2soc
 ls -lh feeds/small/
 rm -rf feeds/small/{luci-app-bypass,luci-app-ssr-plus}
 
-ls -lh feeds/custom/
+echo  "--------------------------------------------------------------"
+find ./ -name luci-app-store
 rm -rf feeds/custom/{luci-app-store} 
-
-ls -lh feeds/custom/
-ls -lh feeds/packages
+rm -rf package/feeds/custom/{luci-app-store}
+find ./ -name luci-app-store
+echo  "--------------------------------------------------------------"
 
 
