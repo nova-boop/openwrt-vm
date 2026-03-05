@@ -131,7 +131,7 @@ jobs:
           echo "download change golang version"
           # git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
           # git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
-          git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
+          git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
           
           echo "show golang path"
           ls -lh feeds/packages/lang/golang
