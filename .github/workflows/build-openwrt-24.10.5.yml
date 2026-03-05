@@ -22,6 +22,13 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
+      - name: Setup Go environment
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.26'
+      - name: Run tests
+        run: go version
+        
       - name: Check Server Performance
         run: |
           echo "警告⚠"
@@ -138,10 +145,6 @@ jobs:
       - name: Change golang version
         run: |
           cd $OPENWRT_PATH
-          
-          echo "go version"
-          go version
-          
           # change golang version
           # echo "ls -lh golang"
           # ls -lh feeds/packages/lang/golang
