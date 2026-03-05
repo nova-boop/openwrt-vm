@@ -134,7 +134,29 @@ jobs:
   
           du -h $OPENWRT_PATH/files
           tree -ifh $OPENWRT_PATH/files
-
+          
+      - name: Change golang version
+        run: |
+          cd $OPENWRT_PATH
+          
+          echo "go version"
+          go version
+          
+          # change golang version
+          # echo "ls -lh golang"
+          # ls -lh feeds/packages/lang/golang
+          
+          rm -rf feeds/packages/lang/golang
+          echo "ls -lg rm -rf golang"
+          
+          echo "download change golang version"
+          # git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+          # git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
+          git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
+          
+          echo "show golang path"
+          ls -lh feeds/packages/lang/golang
+        
       - name: Download xray
         run: |
           cd $OPENWRT_PATH
