@@ -43,9 +43,9 @@ function git_sparse_clone() {
 addFeeds custom https://github.com/kenzok8/openwrt-packages.git
 addFeeds small https://github.com/kenzok8/small.git
 
-sed -i '1i\
-src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main\
-src-git passwall_luci https://github.com/Openwrt-Passwall/openwrt-passwall.git;main' feeds.conf.default
+# sed -i '1i\
+# src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main\
+# src-git passwall_luci https://github.com/Openwrt-Passwall/openwrt-passwall.git;main' feeds.conf.default
 
 
 # addFeeds passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main
@@ -70,7 +70,7 @@ git clone --depth=1 https://github.com/zzsj0928/luci-app-pushbot package/luci-ap
 
 # 端口转发 A luci app of socat for nftables
 # git clone --depth=1 https://github.com/WROIATE/luci-app-socat package/luci-app-socat
-git_sparse_clone main https://github.com/kenzok8/small-package luci-app-socat 
+git_sparse_clone main https://github.com/chenmozhijin/luci-app-socat luci-app-socat 
 
 # 定时重启
 git clone https://github.com/zxl78585/luci-app-autoreboot.git package/luci-app-autoreboot
@@ -82,10 +82,10 @@ git clone --depth=1 https://github.com/lisaac/luci-app-diskman package/luci-app-
 git clone --depth=1 https://github.com/gSpotx2f/luci-app-temp-status package/luci-app-temp-status
 
 # 带宽监控+在线设备，相互依赖
-git_sparse_clone main https://github.com/kenzok8/small-package luci-app-wrtbwmon wrtbwmon luci-app-onliner
+# git_sparse_clone main https://github.com/kenzok8/small-package luci-app-wrtbwmon wrtbwmon luci-app-onliner
 
 # usb打印+网络唤醒Plus
-git_sparse_clone main https://github.com/kenzok8/small-package luci-app-usb-printer luci-app-wolplus
+# git_sparse_clone main https://github.com/kenzok8/small luci-app-usb-printer luci-app-wolplus
 
 # kms
 git_sparse_clone master https://github.com/DokiDuck/luci-app-vlmcsd luci-app-vlmcsd vlmcsd
@@ -110,7 +110,6 @@ umask 022
 git checkout
 popd
 
-git_sparse_clone main https://github.com/kenzok8/small-package dns2socks ipt2socks microsocks
 
 # 
 ./scripts/feeds update -a
