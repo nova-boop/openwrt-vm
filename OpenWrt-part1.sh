@@ -43,6 +43,11 @@ function git_sparse_clone() {
 addFeeds custom https://github.com/kenzok8/openwrt-packages.git
 addFeeds small https://github.com/kenzok8/small.git
 
+sed -i '1i\
+src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main\
+src-git passwall_luci https://github.com/Openwrt-Passwall/openwrt-passwall.git;main' feeds.conf.default
+
+
 # addFeeds passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main
 # addFeeds passwall_luci https://github.com/Openwrt-Passwall/openwrt-passwall.git;main
 
