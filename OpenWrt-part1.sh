@@ -68,9 +68,12 @@ git clone -b v6.1.3  https://github.com/destan19/OpenAppFilter package/OpenAppFi
 # 钉钉推送
 git clone --depth=1 https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
 
-# 端口转发 A luci app of socat for nftables
-# git clone --depth=1 https://github.com/WROIATE/luci-app-socat package/luci-app-socat
-git_sparse_clone main https://github.com/chenmozhijin/luci-app-socat luci-app-socat 
+# 带宽监控+在线设备，相互依赖
+git_sparse_clone master https://github.com/haiibo/openwrt-packages luci-app-wrtbwmon wrtbwmon luci-app-onliner
+
+# usb打印+网络唤醒Plus
+git_sparse_clone main https://github.com/VIKINGYFY/packages luci-app-wolplus
+git clone --depth=1 https://github.com/Dboykey/luci-app-usb-printer package/luci-app-usb-printer
 
 # 定时重启
 git clone https://github.com/zxl78585/luci-app-autoreboot.git package/luci-app-autoreboot
@@ -80,12 +83,6 @@ git clone --depth=1 https://github.com/lisaac/luci-app-diskman package/luci-app-
 
 # 温度插件
 git clone --depth=1 https://github.com/gSpotx2f/luci-app-temp-status package/luci-app-temp-status
-
-# 带宽监控+在线设备，相互依赖
-# git_sparse_clone main https://github.com/kenzok8/small-package luci-app-wrtbwmon wrtbwmon luci-app-onliner
-
-# usb打印+网络唤醒Plus
-# git_sparse_clone main https://github.com/kenzok8/small luci-app-usb-printer luci-app-wolplus
 
 # kms
 git_sparse_clone master https://github.com/DokiDuck/luci-app-vlmcsd luci-app-vlmcsd vlmcsd
