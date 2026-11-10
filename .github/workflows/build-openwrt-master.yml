@@ -149,14 +149,14 @@ jobs:
         run: |
           cd $OPENWRT_PATH
           LATEST_VERSION=$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases/latest | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
-          curl -LO https://github.com/XTLS/Xray-core/releases/download/v$LATEST_VERSION/Xray-linux-arm64-v8a.zip
-          unzip Xray-linux-arm64-v8a.zip -d Xray-linux-arm64-v8a
-          rm Xray-linux-arm64-v8a.zip
+          curl -LO https://github.com/XTLS/Xray-core/releases/download/v$LATEST_VERSION/Xray-linux-64.zip
+          unzip Xray-linux-64.zip -d Xray-linux-64
+          rm Xray-linux-64.zip
           # -0：无损 -2：标准 -3: 较高 -9:最高 --best：最佳
-          upx -3 Xray-linux-arm64-v8a/xray
+          upx -3 Xray-linux-64/xray
           
           mkdir -p $OPENWRT_PATH/files/usr/bin
-          mv Xray-linux-arm64-v8a/xray $OPENWRT_PATH/files/usr/bin/
+          mv Xray-linux-64/xray $OPENWRT_PATH/files/usr/bin/
           ls -lh
           du -h $OPENWRT_PATH/files
           tree -ifh $OPENWRT_PATH/files
@@ -165,15 +165,15 @@ jobs:
         run: |
            cd $OPENWRT_PATH
            LATEST_VERSION=$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases/latest | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
-           curl -LO https://github.com/SagerNet/sing-box/releases/download/v$LATEST_VERSION/sing-box-$LATEST_VERSION-linux-arm64.tar.gz
+           curl -LO https://github.com/SagerNet/sing-box/releases/download/v$LATEST_VERSION/sing-box-$LATEST_VERSION-linux-amd64.tar.gz
            mkdir sing_box_temp
-           tar -zxvf sing-box-$LATEST_VERSION-linux-arm64.tar.gz
+           tar -zxvf sing-box-$LATEST_VERSION-linux-amd64.tar.gz
       
            # -0：无损 -2：标准 -3: 较高 -9:最高 --best：最佳
-           upx -3 sing-box-$LATEST_VERSION-linux-arm64/sing-box
+           upx -3 sing-box-$LATEST_VERSION-linux-amd64/sing-box
       
            mkdir -p $OPENWRT_PATH/files/usr/bin
-           mv sing-box-$LATEST_VERSION-linux-arm64/sing-box $OPENWRT_PATH/files/usr/bin/
+           mv sing-box-$LATEST_VERSION-linux-amd64/sing-box $OPENWRT_PATH/files/usr/bin/
            ls -lh
            du -h $OPENWRT_PATH/files
            tree -ifh $OPENWRT_PATH/files
@@ -182,8 +182,8 @@ jobs:
         run: |
            cd $OPENWRT_PATH
            LATEST_VERSION=$(curl -s https://api.github.com/repos/AdguardTeam/AdGuardHome/releases/latest | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
-           curl -LO https://github.com/AdguardTeam/AdGuardHome/releases/download/v$LATEST_VERSION/AdGuardHome_linux_arm64.tar.gz
-           tar -zxvf AdGuardHome_linux_arm64.tar.gz
+           curl -LO https://github.com/AdguardTeam/AdGuardHome/releases/download/v$LATEST_VERSION/AdGuardHome_linux_amd64.tar.gz
+           tar -zxvf AdGuardHome_linux_amd64.tar.gz
            mv AdGuardHome AdGuardHome_temp
            ls -lh  AdGuardHome_temp
            upx -3 AdGuardHome_temp/AdGuardHome
