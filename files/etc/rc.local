@@ -1,0 +1,4 @@
+# /usr/sbin/uhttpd -p 80 -h /www
+# /etc/init.d/pushbot restart
+
+exit 0

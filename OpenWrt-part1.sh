@@ -10,16 +10,6 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 
-# upgrade gcc11
-# sudo apt-get update && sudo apt-get upgrade -y
-# sudo apt-get install software-properties-common -y
-# sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-# sudo apt-get update
-# sudo apt-get install gcc-11 g++-11 -y
-# sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 60 --slave /usr/bin/g++ g++ /usr/bin/g++-11
-# sudo update-alternatives --config gcc
-# gcc --version
-
 # 自定义函数
 addFeeds(){
   if [ $# == 2 ];then
@@ -42,20 +32,17 @@ sed -i '1i\
 src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main\
 src-git passwall_luci https://github.com/Openwrt-Passwall/openwrt-passwall.git;main' feeds.conf.default
 
-
-# 支持 turboacc
-# 不带 shortcut-fe
-curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
-# 带  不带 shortcut-fe
-# curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
-# shortcut-fe
-git_sparse_clone package https://github.com/chenmozhijin/turboacc shortcut-fe
-
 # 关机
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
 
+# 定时限速
+git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
+
+# NFT版上网时间控制插件
+git_sparse_clone main https://github.com/sirpdboy/luci-app-timecontrol luci-app-timecontrol
+
 # 应用过滤
-git clone -b v6.1.3  https://github.com/destan19/OpenAppFilter package/OpenAppFilter
+git clone -b v6.1.8  https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 
 # 钉钉推送
 git clone --depth=1 https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
@@ -76,12 +63,8 @@ git clone --depth=1 https://github.com/gSpotx2f/luci-app-temp-status package/luc
 # git_sparse_clone master https://github.com/haiibo/openwrt-packages luci-app-wrtbwmon wrtbwmon luci-app-onliner
 
 # usb打印+网络唤醒Plus
-git_sparse_clone main https://github.com/VIKINGYFY/packages luci-app-wolplus
+git_sparse_clone master https://github.com/sundaqiang/openwrt-packages luci-app-wolplus
 # git clone --depth=1 https://github.com/Dboykey/luci-app-usb-printer package/luci-app-usb-printer
-
-# kms
-# git_sparse_clone master https://github.com/DokiDuck/luci-app-vlmcsd luci-app-vlmcsd vlmcsd
-
 
 # theme
 git clone --depth=1  https://github.com/eamonxg/luci-theme-aurora package/luci-theme-aurora
@@ -108,8 +91,6 @@ umask 022
 git checkout
 popd
 
-# SMS tools
-# git_sparse_clone master https://github.com/4IceG/luci-app-sms-tool luci-app-sms-tool sms-tool
 
 #
 ./scripts/feeds update -a
